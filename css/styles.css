@@ -1,0 +1,1384 @@
+/* 
+* DEFINIÇÃO DE VARIÁVEIS DE COR
+* ----------------------------------
+* Uso de variáveis CSS para centralizar a paleta de cores,
+* facilitando futuras alterações e mantendo consistência visual
+*/
+:root {
+    --marsala: #955251;           /* Cor principal marsala */
+    --marsala-light: #a77a79;     /* Tom mais claro de marsala */
+    --marsala-dark: #7a4344;      /* Tom mais escuro de marsala */
+    --rose-gold: #e0bfb8;         /* Ouro rosé - cor secundária */
+    --rose-gold-light: #e8cdc8;   /* Tom mais claro de ouro rosé */
+    --rose-gold-dark: #c9a9a1;    /* Tom mais escuro de ouro rosé */
+    --beige: #f5f1ee;             /* Cor de fundo neutra */
+    --dark-text: #332828;         /* Cor de texto escuro */
+    --light-text: #ffffff;        /* Cor de texto claro */
+}
+
+/* 
+* RESET E CONFIGURAÇÕES GLOBAIS
+* ----------------------------------
+* Aplicando reset de CSS para garantir consistência entre navegadores
+* e definindo a fonte padrão para todo o site
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--beige);
+    color: var(--dark-text);
+}
+
+/* 
+* BARRA SUPERIOR COM INFORMAÇÕES DE CONTATO
+* ----------------------------------
+* Estilização da barra superior que contém o endereço e ícones sociais
+*/
+.header-contact {
+    background-color: var(--marsala-light);
+    color: var(--light-text);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-contact .location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 
+* ÍCONES DE REDES SOCIAIS
+* ----------------------------------
+* Estilização dos ícones de redes sociais no cabeçalho
+* Agora os ícones são links clicáveis (elementos <a>)
+*/
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons .icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--marsala);
+    /* Adicionados para estilizar os links */
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover para os ícones de contato */
+.social-icons .icon:hover {
+    background-color: var(--rose-gold-light);
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 
+* CABEÇALHO PRINCIPAL
+* ----------------------------------
+* Contém a logo e o menu de navegação principal
+*/
+.main-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-text);
+}
+
+/* 
+* ESTILIZAÇÃO DA LOGO
+* ----------------------------------
+* A logo é composta pelo nome principal "JosiGomes" e o subtítulo "BIOMEDICINA ESTÉTICA"
+*/
+/* Estilo para a logo no cabeçalho */
+.logo {
+    font-family: 'Great Vibes', cursive; /* Fonte script para dar elegância */
+    color: var(--marsala);
+    font-size: 2.5rem;
+    display: flex;
+    font-weight: bold;
+    align-items: centeflex-s;
+}
+
+.logo-image {
+    height: 55px; /* Ajuste conforme o tamanho da sua logo */
+    margin-right: 10px;
+}
+
+.logo span {
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    font-size: 0.8rem;  
+    color: var(--marsala-light);
+    letter-spacing: 2px;
+}
+
+
+
+/* 
+* MENU DE NAVEGAÇÃO
+* ----------------------------------
+* Estilização do menu horizontal com efeito de sublinhado no hover
+*/
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--marsala-dark);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Efeito de sublinhado animado no hover */
+.menu a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--rose-gold);
+    transition: width 0.3s;
+}
+
+.menu a:hover:after {
+    width: 100%;
+}
+
+/* 
+* SEÇÃO HERO (BANNER PRINCIPAL)
+* ----------------------------------
+* Banner com imagem de fundo, gradiente, texto principal e imagem lateral
+*/
+.hero {
+    /* Gradiente sobreposto à imagem de fundo para dar profundidade e manter legibilidade do texto */
+    background: linear-gradient(to right, rgba(149, 82, 81, 0.8), rgba(224, 191, 184, 0.8)), url('/api/placeholder/1200/600') no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+    text-align: center;
+    color: var(--light-text);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Área de texto do banner (lado esquerdo) */
+.hero-text {
+    text-align: left;
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 300; /* Fonte fina para elegância */
+}
+
+.hero-text h1 strong {
+    font-weight: 600;
+    color: var(--rose-gold-light); /* Destaque em ouro rosé para a palavra "beleza" */
+}
+
+.hero-text p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Botão de contato estilizado */
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: var(--rose-gold);
+    color: var(--marsala-dark);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid var(--rose-gold);
+}
+
+.contact-btn:hover {
+    background-color: transparent;
+    color: var(--light-text);
+    box-shadow: 0 0 10px rgba(224, 191, 184, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Área de imagem do banner (lado direito) */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+* SEÇÃO DE SERVIÇOS
+* ----------------------------------
+* Grid de cards apresentando os serviços oferecidos
+*/
+.services {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Grid responsivo de 4 colunas */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Estilização dos cards de serviço */
+.service-card {
+    background-color: var(--light-text);
+    border-radius: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+/* Efeito de elevação no hover */
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card h3 {
+    color: var(--marsala);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* 
+* MEDIA QUERIES PARA RESPONSIVIDADE
+* ----------------------------------
+* Adaptações do layout para diferentes tamanhos de tela
+*/
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Empilha os elementos em telas menores */
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+    }
+    
+    .header-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* 
+* SEÇÃO DE ESPECIALIDADES
+* ----------------------------------
+* Grid de cards de tratamentos específicos oferecidos
+*/
+.specialties {
+    padding: 80px 20px;
+    background-color: var(--beige);
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: var(--marsala);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--marsala-light);
+    font-size: 1rem;
+}
+
+.specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cards de tratamento estilizados */
+.treatment-card {
+    background-color: var(--light-text);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.treatment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.treatment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.treatment-card h3 {
+    color: var(--marsala);
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.treatment-card p {
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 20px 20px;
+    flex-grow: 1;
+}
+/* Estilo para a seção "E muito mais..." */
+.much-more {
+    text-align: center;
+    margin: 40px auto 20px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(149, 82, 81, 0.1);
+    border-radius: 8px;
+}
+
+.much-more h3 {
+    color: #955251;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.much-more p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Botão de agendamento na seção de especialidades */
+.appointment-button {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.schedule-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: var(--marsala);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 2px solid var(--marsala);
+}
+
+.schedule-btn:hover {
+    background-color: transparent;
+    color: var(--marsala);
+    box-shadow: 0 0 10px rgba(149, 82, 81, 0.3);
+    transform: translateY(-3px);
+}
+
+
+/* 
+* RODAPÉ
+* ----------------------------------
+* Estilização do rodapé com informações e links
+*/
+footer {
+    background-color: var(--marsala-dark);
+    color: var(--light-text);
+    padding: 80px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+    position: relative; /* Para posicionamento do logo à direita */
+}
+
+.footer-logo p {
+    margin-top: 20px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.footer-logo-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px;
+}
+
+.footer-logo-image {
+    max-width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+.footer-contact h3,
+.footer-hours h3,
+.footer-social h3 {
+    color: var(--rose-gold-light);
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.footer-contact p,
+.footer-hours p {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-links a {
+    color: var(--rose-gold-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--light-text);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Para responsividade em telas menores */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-logo-right {
+        position: static;
+        grid-column: span 2;
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-logo-right {
+        grid-column: span 1;
+    }
+}
+
+
+/* 
+* MEDIA QUERIES ADICIONAIS
+* ----------------------------------
+* Adaptações para os novos elementos em diferentes tamanhos de tela
+*/
+@media (max-width: 1024px) {
+    .specialties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .testimonial-card {
+        min-width: 100%;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .process-step:not(:last-child)::after {
+        left: 50%;
+        top: 50px;
+        height: 30px;
+        width: 2px;
+        transform: translateX(-50%);
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .specialties-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-links {
+        align-items: center;
+    }
+}
+
+/* 
+* SEÇÃO SOBRE A CLÍNICA
+* ----------------------------------
+* Estilização para a seção "Sobre a Clínica"
+*/
+.about-clinic {
+    padding: 80px 20px;
+    background-color: var(--beige);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: var(--marsala);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.about-item {
+    display: flex;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+.about-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content h3 {
+    color: var(--marsala);
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.about-content p {
+    color: var(--dark-text);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid var(--rose-gold);
+    border-radius: 30px;
+    z-index: -1;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--light-text);
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 70%;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    color: var(--marsala);
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-caption .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--marsala-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column-reverse;
+    }
+    
+    .about-image {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* 
+* SEÇÃO NOSSO ESPAÇO - CARROSSEL
+* ----------------------------------
+* Estilização do carrossel de imagens para a seção "Nosso espaço"
+*/
+.espaco {
+    padding: 80px 20px;
+    background-color: var(--beige);
+}
+
+.espaco-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.espaco-container h2 {
+    color: var(--marsala);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.espaco-container p {
+    color: var(--marsala-light);
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container do carrossel com largura controlada */
+.espaco-carrossel-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Carrossel principal com overflow escondido */
+.espaco-carrossel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Container de slides com display flex */
+.espaco-slides {
+    display: flex;
+    height: 500px; /* Altura fixa para todas as imagens */
+    transition: transform 0.5s ease; /* Movido para o container pai */
+    width: 100%;
+}
+
+/* Estilo individual de cada slide */
+.espaco-slide {
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.espaco-slide img {
+    width: 110%;
+    height: 110%;
+    object-position: center;
+    object-fit: cover;
+    display: block; /* Elimina espaço extra abaixo das imagens */
+   
+}
+
+
+/* Botões de navegação (setas) */
+.espaco-prev, .espaco-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--marsala);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque ao tocar em dispositivos móveis */
+}
+
+.espaco-prev:hover, .espaco-next:hover {
+    background-color: var(--marsala-light);
+    color: var(--light-text);
+}
+
+.espaco-prev {
+    left: 20px;
+}
+
+.espaco-next {
+    right: 20px;
+}
+
+/* Indicadores (pontos) de navegação */
+.espaco-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.espaco-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--rose-gold-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque ao tocar em dispositivos móveis */
+}
+
+.espaco-dot.active {
+    background-color: var(--marsala);
+    transform: scale(1.2);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .espaco-slides {
+        height: 300px;
+    }
+    
+    .espaco-prev, .espaco-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .espaco-slides {
+        height: 250px;
+    }
+    
+    .espaco-prev, .espaco-next {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    /* Melhorar a área de toque em dispositivos móveis */
+    .espaco-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* 
+* SEÇÃO DE TRANSFORMAÇÕES - CARROSSEL
+* ----------------------------------
+* Estilização do carrossel de transformações com layout consistente
+* Mantém a estética marsala e ouro rosé do site original
+* Adicionado espaçamento adequado entre os itens
+* Configurado para exibir no máximo duas imagens no modo mobile
+* ATUALIZAÇÃO: Terceiro quadrado centralizado na linha de baixo
+*/
+:root {
+    --marsala: #955251;
+    --marsala-light: #AC6A68;
+    --beige: #F5F1ED;
+    --light-text: #FFFFFF;
+    --rose-gold: #B76E79;
+    --rose-gold-light: #D6A9A9;
+}
+
+.transformacoes {
+    padding: 80px 20px;
+    background-color: var(--beige);
+}
+
+.transformacoes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--light-text);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 40px 20px;
+}
+
+.transformacoes-container h2 {
+    color: var(--marsala);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.transformacoes-container p {
+    color: var(--marsala-light);
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container do carrossel com largura controlada */
+.transformacoes-carrossel-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0; /* Espaçamento vertical adicional */
+}
+
+/* Carrossel principal */
+.transformacoes-carrossel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 30px; /* Espaçamento na parte inferior do carrossel */
+}
+
+/* Container de slides com display flex */
+.transformacoes-slides {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Layout básico do slide - modificado para grid */
+.transformacoes-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "item1 item2"
+        "item3 item3";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-items: center;
+}
+
+/* Atribuições de áreas do grid para os itens */
+.transformacao-item:nth-child(1) {
+    grid-area: item1;
+}
+
+.transformacao-item:nth-child(2) {
+    grid-area: item2;
+}
+
+.transformacao-item:nth-child(3) {
+    grid-area: item3;
+    max-width: 50%; /* Limita a largura do terceiro item */
+    margin: 0 auto; /* Centraliza o terceiro item */
+}
+
+/* Estilo para cada item de transformação */
+.transformacao-item {
+    width: 100%;
+    max-width: 400px;  /* Largura limitada para melhor visualização */
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px; /* Bordas mais arredondadas */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+}
+
+/* Container de imagens antes e depois */
+.transformacao-imagens {
+    display: flex;
+    height: 250px;  /* Altura padrão */
+    position: relative;
+}
+
+/* Estilo individual para imagens antes e depois */
+.antes, .depois {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Garantir que a imagem fique centralizada */
+}
+
+/* Divisor visual entre as imagens antes e depois */
+.transformacao-imagens::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: var(--light-text);
+    z-index: 3;
+}
+
+/* Título do tipo de procedimento */
+.transformacao-titulo {
+    background-color: var(--marsala-light);
+    color: var(--light-text);
+    padding: 15px; /* Padding aumentado */
+    font-size: 1rem; /* Tamanho da fonte ligeiramente aumentado */
+    text-align: center;
+    font-weight: 500;
+    min-height: 50px; /* Altura mínima para alinhar todos os títulos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botões de navegação (setas) */
+.transformacoes-prev, .transformacoes-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--light-text);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--marsala);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px; /* Espaçamento lateral */
+}
+
+.transformacoes-prev:hover, .transformacoes-next:hover {
+    background-color: var(--marsala);
+    color: var(--light-text);
+}
+
+.transformacoes-prev {
+    left: -35px; /* Afastado mais para dar espaço */
+}
+
+.transformacoes-next {
+    right: -35px; /* Afastado mais para dar espaço */
+}
+
+/* Indicadores (pontos) de navegação */
+.transformacoes-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Aumentando espaço acima dos indicadores */
+    gap: 12px; /* Mais espaço entre os pontos */
+    flex-wrap: wrap;
+    padding: 0 15px; /* Padding lateral */
+}
+
+.transformacoes-dot {
+    width: 14px; /* Ligeiramente maior */
+    height: 14px; /* Ligeiramente maior */
+    border: none;
+    border-radius: 50%;
+    background-color: var(--rose-gold-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    margin: 0 3px; /* Espaçamento horizontal adicional */
+}
+
+.transformacoes-dot.active {
+    background-color: var(--marsala);
+    transform: scale(1.3);
+}
+
+/* Anotação de "Antes" e "Depois" sobreposta às imagens */
+.label-antes, .label-depois {
+    position: absolute;
+    top: 15px; /* Distância do topo aumentada */
+    background-color: rgba(149, 82, 81, 0.8); /* Cor um pouco mais opaca */
+    color: white;
+    padding: 6px 12px; /* Padding aumentado */
+    font-size: 0.9rem; /* Fonte ligeiramente maior */
+    border-radius: 4px;
+    z-index: 4; /* Aumentado para ficar acima do divisor */
+    font-weight: 500; /* Um pouco mais negrito */
+}
+
+.label-antes {
+    left: 15px; /* Mais afastado da borda */
+}
+
+.label-depois {
+    right: 15px; /* Mais afastado da borda */
+}
+
+/* Responsividade para diferentes tamanhos de tela */
+@media (max-width: 1024px) {
+    .transformacoes-prev {
+        left: -25px;
+    }
+    
+    .transformacoes-next {
+        right: -25px;
+    }
+    
+    .transformacoes-slide {
+        padding: 15px; /* Reduzindo um pouco o padding em telas menores */
+        gap: 15px;
+    }
+    
+    .transformacao-item:nth-child(3) {
+        max-width: 70%; /* Aumenta um pouco para telas menores */
+    }
+}
+
+/* Ajustes para tablets e dispositivos móveis maiores */
+@media (max-width: 768px) {
+    /* Manter o layout de grade com o terceiro item centralizado */
+    .transformacoes-slide {
+        grid-template-areas: 
+            "item1 item2"
+            "item3 item3";
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* Ajustar o item para preencher cada coluna */
+    .transformacao-item {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .transformacao-item:nth-child(3) {
+        max-width: 70%; /* Ajuste para tablets */
+    }
+    
+    /* Ajustar altura das imagens para o novo layout mais compacto */
+    .transformacao-imagens {
+        height: 200px;
+    }
+    
+    /* Altura do título ajustada para o layout mais compacto */
+    .transformacao-titulo {
+        padding: 10px;
+        font-size: 0.9rem;
+        min-height: 40px;
+    }
+    
+    /* Container e títulos principais */
+    .transformacoes-container {
+        padding: 30px 15px;
+    }
+    
+    .transformacoes-container h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .transformacoes-container p {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Ajuste das labels */
+    .label-antes, .label-depois {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* Botões de navegação */
+    .transformacoes-prev, .transformacoes-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .transformacoes-prev {
+        left: -15px;
+    }
+    
+    .transformacoes-next {
+        right: -15px;
+    }
+    
+    /* Divisor mais fino para economizar espaço */
+    .transformacao-imagens::after {
+        width: 2px;
+    }
+}
+
+/* Ajustes para smartphones e telas muito pequenas */
+@media (max-width: 480px) {
+    /* Container principal */
+    .transformacoes {
+        padding: 50px 10px;
+    }
+    
+    .transformacoes-container {
+        padding: 25px 10px;
+    }
+    
+    .transformacoes-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Ajustar layout para telefones */
+    .transformacoes-slide {
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .transformacao-item:nth-child(3) {
+        max-width: 85%; /* Maior largura em telas pequenas */
+    }
+    
+    /* Ajustar altura para telas menores */
+    .transformacao-imagens {
+        height: 150px; /* Reduzido para telas muito pequenas */
+    }
+    
+    /* Título mais compacto */
+    .transformacao-titulo {
+        padding: 8px;
+        font-size: 0.8rem;
+        min-height: 35px;
+    }
+    
+    /* Botões de navegação ainda menores */
+    .transformacoes-prev, .transformacoes-next {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        opacity: 0.85;
+    }
+    
+    .transformacoes-prev {
+        left: -10px;
+    }
+    
+    .transformacoes-next {
+        right: -10px;
+    }
+    
+    /* Labels menores */
+    .label-antes, .label-depois {
+        top: 5px;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .label-antes {
+        left: 5px;
+    }
+    
+    .label-depois {
+        right: 5px;
+    }
+    
+    /* Ajuste nos pontos de navegação */
+    .transformacoes-dots {
+        margin-top: 20px;
+        gap: 8px;
+    }
+    
+    .transformacoes-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Para telas extremamente pequenas */
+@media (max-width: 360px) {
+    /* Reduzir ainda mais a altura das imagens */
+    .transformacao-imagens {
+        height: 130px;
+    }
+    
+    /* Título ainda mais compacto */
+    .transformacao-titulo {
+        padding: 6px;
+        min-height: 30px;
+        font-size: 0.75rem;
+    }
+    
+    .transformacao-item:nth-child(3) {
+        max-width: 90%; /* Quase largura total em telas muito pequenas */
+    }
+}
